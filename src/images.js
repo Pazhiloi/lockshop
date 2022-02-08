@@ -37,18 +37,20 @@ import box1 from "./assets/box1.png";
 import settings from "./assets/settings.png";
 import picture from "./assets/image.png";
 import raddison from "./assets/raddison.png";
-import raddisonLogo from "./assets/raddison-logo.png";
+import raddisonLogo from "./assets/radisson-logo.png";
 import icon1 from "./assets/icon1.png";
 import icon2 from "./assets/icon2.png";
 import icon3 from "./assets/icon3.png";
 import payment from "./assets/payment.png";
 import card from "./assets/card.png";
-import logo from "./assets/logo.png";
 import phone from "./assets/phone.png";
+import logo from "./assets/logo.png";
+import logo1 from "./assets/logo1.png";
 
 export  {
-  phone,
+  logo1,
   logo,
+  phone,
   payment,
   card,
   vk,
