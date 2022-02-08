@@ -43,8 +43,12 @@ import icon2 from "./assets/icon2.png";
 import icon3 from "./assets/icon3.png";
 import payment from "./assets/payment.png";
 import card from "./assets/card.png";
+import logo from "./assets/logo.png";
+import phone from "./assets/phone.png";
 
-export {
+export  {
+  phone,
+  logo,
   payment,
   card,
   vk,
