@@ -219,19 +219,19 @@ export const mainCategories = [
   },
   {
     id: 2,
-    image: lock5,
+    image: lock6,
     text: `Для шкафчиков`,
     link: ``,
   },
   {
     id: 3,
-    image: lock5,
+    image: lock7,
     text: `Для офисов`,
     link: ``,
   },
   {
     id: 4,
-    image: lock5,
+    image: lock8,
     text: `Замки для дома`,
     link: ``,
   },

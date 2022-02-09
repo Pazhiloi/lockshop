@@ -11,6 +11,7 @@ const Button = ({text}) => {
 
 const ButtonContainer = styled.button`
 color: #fff;
+width: 220px;
 background-color: #4295e4;
 height: 50px;
 padding: 12px 37px;

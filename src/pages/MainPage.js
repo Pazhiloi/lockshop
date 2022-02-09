@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { MainSlider } from '../components/Carousel';
 import Preferences from '../components/Preferences';
+import Categories from '../components/Categories';
 
 const MainPage = () => {
   return (
@@ -9,6 +10,7 @@ const MainPage = () => {
       <div className="wrapper">
         <MainSlider/>
         <Preferences/>
+        <Categories/>
       </div>
     </MainPageContainer>
   );
