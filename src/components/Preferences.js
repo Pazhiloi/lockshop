@@ -30,7 +30,7 @@ const PreferencesContainer = styled.section`
   padding: 50px 0;
   .preferences {
     &__title {
-      margin-bottom: 50px;
+      margin: 50px 0;
     }
     &__items {
       display: grid;
