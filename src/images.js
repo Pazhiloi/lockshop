@@ -46,8 +46,12 @@ import card from "./assets/card.png";
 import phone from "./assets/phone.png";
 import logo from "./assets/logo.png";
 import logo1 from "./assets/logo1.png";
+import arrowLeft from "./assets/arrow-left.png";
+import arrowRight from "./assets/arrow-right.png";
 
-export  {
+export {
+  arrowLeft,
+  arrowRight,
   logo1,
   logo,
   phone,
