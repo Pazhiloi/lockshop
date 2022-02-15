@@ -17,12 +17,13 @@ const Navigation = () => {
                 <Link to={"/"} className="menu__link">
                   Главная
                 </Link>
-                <div className="menu__item">
-                  <span>Каталог</span>{" "}
-                </div>
+                <Link to={"/catalog"} className="menu__link">
+                  Каталог
+                </Link>
                 <Link to={"/solds"} className="menu__link">
                   Оптовая продажа
                 </Link>
+
                 <Link to={"/about"} className="menu__link">
                   О нас
                 </Link>

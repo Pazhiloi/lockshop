@@ -48,8 +48,10 @@ import logo from "./assets/logo.png";
 import logo1 from "./assets/logo1.png";
 import arrowLeft from "./assets/arrow-left.png";
 import arrowRight from "./assets/arrow-right.png";
+import arrowTop from "./assets/arrow-top.jpg";
 
 export {
+  arrowTop,
   arrowLeft,
   arrowRight,
   logo1,

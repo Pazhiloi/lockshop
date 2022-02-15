@@ -244,10 +244,10 @@ export const product = [
     icon: gift,
     text: `Дверной Замок Golden Soft для отеля`,
     price: `37 000₽`,
-    currentPrice: `33 000₽`,
+    currentPrice: 33000,
     image: lock3,
     reviewsAmount: 10,
-    rating: 3
+    rating: 5,
   },
   {
     id: 2,
@@ -256,10 +256,10 @@ export const product = [
     icon: gift,
     text: `Вариативный замок Golden Soft для отеля`,
     price: `8 000₽`,
-    currentPrice: `7 000₽`,
+    currentPrice: 7000,
     image: lock4,
     reviewsAmount: 10,
-    rating: 3
+    rating: 2
   },
   {
     id: 3,
@@ -268,10 +268,10 @@ export const product = [
     icon: gift,
     text: `Дверной Замок Golden Soft для офиса`,
     price: `39 000₽`,
-    currentPrice: `33 000₽`,
+    currentPrice: 33000,
     image: lock1,
     reviewsAmount: 10,
-    rating: 3
+    rating: 1
   },
   {
     id: 4,
@@ -280,10 +280,10 @@ export const product = [
     icon: gift,
     text: `Дверной Замок Golden Soft для отеля`,
     price: `12 000₽`,
-    currentPrice: `9 000₽`,
+    currentPrice: 9000,
     image: lock2,
     reviewsAmount: 10,
-    rating: 3
+    rating: 5
   },
   {
     id: 5,
@@ -292,10 +292,10 @@ export const product = [
     icon: gift,
     text: `Дверной Замок Golden Soft для отеля`,
     price: `37 000₽`,
-    currentPrice: `33 000₽`,
+    currentPrice: 33000,
     image: lock3,
     reviewsAmount: 10,
-    rating: 3
+    rating: 4
   },
   {
     id: 6,
@@ -304,10 +304,10 @@ export const product = [
     icon: gift,
     text: `Вариативный замок Golden Soft для отеля`,
     price: `8 000₽`,
-    currentPrice: `7 000₽`,
+    currentPrice: 7000,
     image: lock4,
     reviewsAmount: 10,
-    rating: 3
+    rating: 2
   },
   {
     id: 7,
@@ -316,10 +316,10 @@ export const product = [
     icon: gift,
     text: `Дверной Замок Golden Soft для офиса`,
     price: `39 000₽`,
-    currentPrice: `33 000₽`,
+    currentPrice: 33000,
     image: lock1,
     reviewsAmount: 10,
-    rating: 3
+    rating: 1
   },
   {
     id: 8,
@@ -328,10 +328,10 @@ export const product = [
     icon: gift,
     text: `Дверной Замок Golden Soft для отеля`,
     price: `12 000₽`,
-    currentPrice: `9 000₽`,
+    currentPrice: 9000,
     image: lock2,
     reviewsAmount: 10,
-    rating: 3
+    rating: 0
   },
 ];
 
@@ -345,7 +345,28 @@ export const inputs = [
     text: `Ваш Email`,
   },
 ];
-
+export const catalogFilterList = [
+  {
+    id: 1,
+    title: `Цена`,
+  },
+  {
+    id: 2,
+    title: `Особенности`,
+  },
+  {
+    id: 3,
+    title: `Цвет`,
+  },
+  {
+    id: 4,
+    title: `Материал`,
+  },
+  {
+    id: 5,
+    title: `Размеры`,
+  },
+];
 export const catalogCategories = [
   {
     id: 1,
@@ -390,93 +411,72 @@ export const catalogCategories = [
 ];
 
 export const filterList = [
-  {
-    id: 1,
-    title: `Особенности`,
-    list: [
       {
-        id: "1",
+        id: "1a",
         isCheked: true,
         text: `Электронные кодовые замки`,
         amount: "(5)",
       },
       {
-        id: "2",
+        id: "2a",
         isCheked: false,
         text: `Биометрические замки`,
         amount: "(5)",
       },
       {
-        id: "3",
+        id: "3a",
         isCheked: false,
         text: `Замок с отппечатком`,
         amount: "(5)",
       },
       {
-        id: "4",
+        id: "4a",
         isCheked: false,
         text: `Замок с бесконтактной картой`,
         amount: "(5)",
       },
       {
-        id: "5",
+        id: "5a",
         isCheked: false,
         text: `Программируемые замки`,
         amount: "(5)",
       },
       {
-        id: "6",
+        id: "6a",
         isCheked: false,
         text: `Замки на батарейках`,
         amount: "(5)",
       },
       {
-        id: "7",
+        id: "7a",
         isCheked: false,
         text: `Замки с удаленным доступом`,
         amount: "(5)",
       },
       {
-        id: "8",
+        id: "8a",
         isCheked: false,
         text: `Bluetooth замки`,
         amount: "(5)",
       },
       {
-        id: "9",
+        id: "9a",
         isCheked: false,
         text: `Электронные замки для квартиры`,
         amount: "(5)",
       },
       {
-        id: "10",
+        id: "10a",
         isCheked: false,
         text: `Замки для стеклянных дверей`,
         amount: "(5)",
       },
       {
-        id: "11",
+        id: "11a",
         isCheked: false,
         text: `Электронные цилиндры`,
         amount: "(5)",
       },
-    ],
-  },
-  {
-    id: 2,
-    title: `Цвет`,
-    list: [],
-  },
-  {
-    id: 3,
-    title: `Материал`,
-    list: [],
-  },
-  {
-    id: 4,
-    title: `Размеры`,
-    list: [],
-  },
 ];
 export const soldsList = [
   {

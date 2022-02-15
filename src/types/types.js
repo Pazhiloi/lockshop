@@ -1,0 +1,4 @@
+export const SORT_PRODUCTS = "SORT_PRODUCTS";
+export const UPDADE_SORT = "UPDADE_SORT";
+
+export const LOAD_PRODUCTS = "LOAD_PRODUCTS";

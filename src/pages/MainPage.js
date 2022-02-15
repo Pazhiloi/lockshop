@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { MainSlider } from '../components/Carousel';
 import Preferences from '../components/Preferences';
 import Categories from '../components/Categories';
+import { PopularSlider } from '../components/PopularCarousel';
 
 const MainPage = () => {
   return (
@@ -11,6 +12,7 @@ const MainPage = () => {
         <MainSlider/>
         <Preferences/>
         <Categories/>
+        <PopularSlider/>
       </div>
     </MainPageContainer>
   );
