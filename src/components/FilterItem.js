@@ -1,41 +1,124 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { arrowTop } from '../images';
-import { filterList } from '../data';
-import CheckboxItem from './CheckboxItem';
-const FilterItem = ({title}) => {
-const [height, setHeight] = useState(false)
+import React, { useState } from "react";
+import styled from "styled-components";
+import { arrowTop } from "../images";
+import { colors, filterList, materials, sizes } from "../data";
+import { useDispatch } from "react-redux";
+import Color from "./Color";
+import { ALL_SIZE, FILTER_BY_CHECKBOX, FILTER_BY_RANGE, SET_ALL_COLORS, SET_ALL_MATERIALS } from "../types/types";
+import Material from "./Material";
+import Size from "./Size";
+import { Slider } from "@mui/material";
+import CheckboxItem from "./CheckboxItem";
+const FilterItem = ({ title, names }) => {
+  const [height, setHeight] = useState(false);
+  const [value, setValue] = useState([0, 1000])
+  const dispatch = useDispatch();
+  const selectAll = () => {
+    dispatch({type: SET_ALL_COLORS})
+  }
+  const setAllMaterials = () => {
+    dispatch({ type: SET_ALL_MATERIALS});
+  }
+
+  const selectAllSizes = () => {
+    dispatch({ type: ALL_SIZE });
+  }
+  const handleChange = (e) => {
+    setValue(e.target.value);
+    dispatch({
+      type: FILTER_BY_RANGE,
+      payload: {
+        first: value[0] * 1000,
+        second: value[1] * 1000,
+      },
+    });
+  }
+  const handleInput = () => {
+
+  }
+  const handleCheckbox = (id, e) => {
+    const findIdx = names.indexOf(e.target.value)
+    if (findIdx > -1) {
+      names.splice(findIdx, 1);
+    }else{
+      names.push(e.target.value);
+    }
+    dispatch({ type: FILTER_BY_CHECKBOX, payload:{names, id} });
+    console.log(names);
+  };
+
   const mapHelper = () => {
-  return filterList.map((item) => {
-      return <CheckboxItem key={item.id} {...item}/>
+    return filterList.map((item) => {
+      return (
+        <div key={item.id}>
+          <CheckboxItem handleCheckbox={handleCheckbox} {...item} />
+        </div>
+      );
     });
   };
-  const renderList  = () => {
+
+  const mapColors = () => {
+    return (
+      <Colors>
+        <div className="all" onClick={selectAll}>all</div>
+        {colors.map((item) => (
+          <Color {...item} key={item.id} />
+        ))}
+      </Colors>
+    );
+  }
+  const mapMaterials = () => {
+    return <Materials>
+    <div className="all" onClick={setAllMaterials}>все</div>
+    {materials.map(item => (
+      <Material key={item.id} {...item}/>
+    ))}
+    </Materials>
+  }
+  const mapSizes = () => {
+    return <Sizes>
+    <div className="all" onClick={selectAllSizes}>все</div>
+    {sizes.map(item => (
+      <Size key={item.id} {...item}/> 
+    ))}
+    </Sizes>
+  }
+  const renderList = () => {
     if (title === `Цена`) {
-      return <p>Цена</p>;
+      return (
+        <>
+          <RangeValues>
+            <input onChange={handleInput}  type="text" value={value[0] *1000} />
+            <input onChange={handleInput}  type="text" value={value[1] *1000} />
+          </RangeValues>
+          <RangeSlider>
+            <Slider
+              getAriaLabel={() => "Temperature range"}
+              value={value}
+              onChange={handleChange}
+              valueLabelDisplay="auto"
+            />
+          </RangeSlider>
+        </>
+      );
     }
     if (title === `Особенности`) {
       return <div>{mapHelper()}</div>;
     }
     if (title === `Цвет`) {
-      return <p>Цвет</p>;
-      
+      return <div>{mapColors()}</div>;
     }
     if (title === `Материал`) {
-      return <p>Материал</p>;
+      return <div>{mapMaterials()}</div>;
     }
     if (title === `Размеры`) {
-      return <p>Размеры</p>;
+      return <div>{mapSizes()}</div>;
     }
-    
-  }
+  };
   return (
     <FilterItemContainer>
-      <div
-        onClick={() => setHeight(!height)}
-        className={height ? "item active" : "item"}
-      >
-        <div className="item__top">
+      <div className={height ? "item active" : "item"}>
+        <div className="item__top" onClick={() => setHeight(!height)}>
           <div className="item__title">{title}</div>
           <div className="item__arrow">
             <img src={arrowTop} alt={title} />
@@ -75,5 +158,48 @@ const FilterItemContainer = styled.div`
     }
   }
 `;
+const Sizes = styled.div`
+div{
+  margin-bottom: 10px;
+}
+`
+const Materials = styled.div`
+div{
+  margin-bottom: 10px;
+}
+`
+const Colors = styled.div`
+display: flex;
+.all{
+  text-transform: uppercase;
+}
+.color{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-left: 10px;
+  &.active{
+    transform: scale(1.2);
+  }
+}
+`
 
+const RangeSlider = styled.div`
+  width: 200px;
+  position: relative;
+  text-align: center;
+  margin: auto 16px;
+  input[type="range"] {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    z-index: 2;
+    position: relative;
+    top: 2px;
+    margin-top: -7px;
+  }
+`;
+const RangeValues = styled.div``;
 export default FilterItem;

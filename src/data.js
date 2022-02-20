@@ -236,6 +236,24 @@ export const mainCategories = [
     link: ``,
   },
 ];
+export const materials = [
+  {
+    id: 1,
+    material: "хром",
+  },
+  {
+    id: 2,
+    material: "дерево",
+  },
+  {
+    id: 3,
+    material: "метал",
+  },
+  {
+    id: 4,
+    material: "антрацит",
+  },
+];
 export const product = [
   {
     id: 1,
@@ -248,6 +266,10 @@ export const product = [
     image: lock3,
     reviewsAmount: 10,
     rating: 5,
+    color: "yellow",
+    material: "хром",
+    availableSizes: ["X", "L", "XL", "XXL", "XS"],
+    availableCategories: ["Электронные кодовые замки", "Биометрические замки"],
   },
   {
     id: 2,
@@ -259,7 +281,14 @@ export const product = [
     currentPrice: 7000,
     image: lock4,
     reviewsAmount: 10,
-    rating: 2
+    rating: 2,
+    color: "violet",
+    material: "антрацит",
+    availableSizes: ["X", "M", "L"],
+    availableCategories: [
+      "Замок с отппечатком",
+      "Замок с бесконтактной картой",
+    ],
   },
   {
     id: 3,
@@ -271,7 +300,11 @@ export const product = [
     currentPrice: 33000,
     image: lock1,
     reviewsAmount: 10,
-    rating: 1
+    rating: 1,
+    color: "black",
+    material: "антрацит",
+    availableSizes: ["X", "M", "L"],
+    availableCategories: ["Программируемые замки", "Замки на батарейках"],
   },
   {
     id: 4,
@@ -283,7 +316,11 @@ export const product = [
     currentPrice: 9000,
     image: lock2,
     reviewsAmount: 10,
-    rating: 5
+    rating: 5,
+    color: "black",
+    material: "метал",
+    availableSizes: ["XL"],
+    availableCategories: ["Замки с удаленным доступом", "Bluetooth замки"],
   },
   {
     id: 5,
@@ -295,7 +332,14 @@ export const product = [
     currentPrice: 33000,
     image: lock3,
     reviewsAmount: 10,
-    rating: 4
+    rating: 4,
+    color: "green",
+    material: "метал",
+    availableSizes: ["X", "L", "XL"],
+    availableCategories: [
+      "Электронные замки для квартиры",
+      "Замки для стеклянных дверей",
+    ],
   },
   {
     id: 6,
@@ -307,7 +351,11 @@ export const product = [
     currentPrice: 7000,
     image: lock4,
     reviewsAmount: 10,
-    rating: 2
+    rating: 2,
+    color: "green",
+    material: "метал",
+    availableSizes: ["XL", "XXL"],
+    availableCategories: ["Электронные цилиндры"],
   },
   {
     id: 7,
@@ -319,7 +367,11 @@ export const product = [
     currentPrice: 33000,
     image: lock1,
     reviewsAmount: 10,
-    rating: 1
+    rating: 1,
+    color: "red",
+    material: "дерево",
+    availableSizes: ["X", "L", "XL", "XXL"],
+    availableCategories: ["Электронные кодовые замки"],
   },
   {
     id: 8,
@@ -331,10 +383,39 @@ export const product = [
     currentPrice: 9000,
     image: lock2,
     reviewsAmount: 10,
-    rating: 0
+    rating: 0,
+    color: "red",
+    material: "дерево",
+    availableSizes: ["X", "L", "XL", "XXL"],
+    availableCategories: ["Биометрические замки", 'Замок с отппечатком'],
   },
 ];
-
+export const sizes = [
+  {
+    id: 1,
+    size: "XS",
+  },
+  {
+    id: 2,
+    size: "S",
+  },
+  {
+    id: 3,
+    size: "M",
+  },
+  {
+    id: 4,
+    size: "L",
+  },
+  {
+    id: 5,
+    size: "XL",
+  },
+  {
+    id: 6,
+    size: "XXL",
+  },
+];
 export const inputs = [
   {
     id: 1,
@@ -411,72 +492,72 @@ export const catalogCategories = [
 ];
 
 export const filterList = [
-      {
-        id: "1a",
-        isCheked: true,
-        text: `Электронные кодовые замки`,
-        amount: "(5)",
-      },
-      {
-        id: "2a",
-        isCheked: false,
-        text: `Биометрические замки`,
-        amount: "(5)",
-      },
-      {
-        id: "3a",
-        isCheked: false,
-        text: `Замок с отппечатком`,
-        amount: "(5)",
-      },
-      {
-        id: "4a",
-        isCheked: false,
-        text: `Замок с бесконтактной картой`,
-        amount: "(5)",
-      },
-      {
-        id: "5a",
-        isCheked: false,
-        text: `Программируемые замки`,
-        amount: "(5)",
-      },
-      {
-        id: "6a",
-        isCheked: false,
-        text: `Замки на батарейках`,
-        amount: "(5)",
-      },
-      {
-        id: "7a",
-        isCheked: false,
-        text: `Замки с удаленным доступом`,
-        amount: "(5)",
-      },
-      {
-        id: "8a",
-        isCheked: false,
-        text: `Bluetooth замки`,
-        amount: "(5)",
-      },
-      {
-        id: "9a",
-        isCheked: false,
-        text: `Электронные замки для квартиры`,
-        amount: "(5)",
-      },
-      {
-        id: "10a",
-        isCheked: false,
-        text: `Замки для стеклянных дверей`,
-        amount: "(5)",
-      },
-      {
-        id: "11a",
-        isCheked: false,
-        text: `Электронные цилиндры`,
-        amount: "(5)",
-      },
+  {
+    id: 1,
+    checked: false,
+    text: `Электронные кодовые замки`,
+    amount: "(5)",
+  },
+  {
+    id: 2,
+    checked: false,
+    text: `Биометрические замки`,
+    amount: "(5)",
+  },
+  {
+    id: 3,
+    checked: false,
+    text: `Замок с отппечатком`,
+    amount: "(5)",
+  },
+  {
+    id: 4,
+    checked: false,
+    text: `Замок с бесконтактной картой`,
+    amount: "(5)",
+  },
+  {
+    id: 5,
+    checked: false,
+    text: `Программируемые замки`,
+    amount: "(5)",
+  },
+  {
+    id: 6,
+    checked: false,
+    text: `Замки на батарейках`,
+    amount: "(5)",
+  },
+  {
+    id: 7,
+    checked: false,
+    text: `Замки с удаленным доступом`,
+    amount: "(5)",
+  },
+  {
+    id: 8,
+    checked: false,
+    text: `Bluetooth замки`,
+    amount: "(5)",
+  },
+  {
+    id: 9,
+    checked: false,
+    text: `Электронные замки для квартиры`,
+    amount: "(5)",
+  },
+  {
+    id: 10,
+    checked: false,
+    text: `Замки для стеклянных дверей`,
+    amount: "(5)",
+  },
+  {
+    id: 11,
+    checked: false,
+    text: `Электронные цилиндры`,
+    amount: "(5)",
+  },
 ];
 export const soldsList = [
   {
@@ -799,5 +880,27 @@ export const catalogsList = [
     id: 8,
     text: `Замки для раздевалок`,
     image: lock8,
+  },
+];
+export const colors = [
+  {
+    id: 1,
+    color: "red",
+  },
+  {
+    id: 2,
+    color: "green",
+  },
+  {
+    id: 3,
+    color: "violet",
+  },
+  {
+    id: 4,
+    color: "yellow",
+  },
+  {
+    id: 5,
+    color: "black",
   },
 ];

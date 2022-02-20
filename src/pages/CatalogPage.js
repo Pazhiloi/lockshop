@@ -5,9 +5,10 @@ import Button from "../components/Button";
 import FilterItem from "../components/FilterItem";
 import Product from "../components/Product";
 import { catalogFilterList, product } from "../data";
-import { LOAD_PRODUCTS, SORT_PRODUCTS, UPDADE_SORT } from "../types/types";
+import { CLEAR_FILTERS, FILTER_BY_TEXT, LOAD_PRODUCTS, SORT_PRODUCTS, UPDADE_SORT } from "../types/types";
 
 const CatalogPage = () => {
+  let names = [];
   const dispatch = useDispatch();
 
   const filtered_items = useSelector((state) => {
@@ -16,10 +17,12 @@ const CatalogPage = () => {
   });
   const sort = useSelector((state) => {
     const { filterReducer } = state;
-    console.log(filterReducer._sort);
     return filterReducer._sort
   })
-  console.log(filtered_items);
+  const text = useSelector((state) => {
+    const { filterReducer } = state;
+    return filterReducer.filters.text
+  })
 
    useEffect(() => {
      dispatch({ type: LOAD_PRODUCTS, payload: product });
@@ -35,6 +38,13 @@ const CatalogPage = () => {
     const value = e.target.value
     dispatch({ type: UPDADE_SORT, payload: value });
   };
+
+  const resetFilters = () => {
+    dispatch({type: CLEAR_FILTERS})
+  }
+  const findByText = (e) => {
+    dispatch({ type: FILTER_BY_TEXT, text: e.target.value });
+  }
   return (
     <CatalogPageContainer>
       <div className="catalog">
@@ -43,10 +53,14 @@ const CatalogPage = () => {
             Накладные электронные замки
           </div>
           <div className="catalog__top">
-            <div className="catalog__reset">
+            <div className="catalog__reset" onClick={resetFilters}>
               <Button text="Сбросить фильтры" />
             </div>
-            <div className="catalog__chosen">Электронные кодовые замки</div>
+            <div className="catalog__chosen">
+              <input type="text" value={text} onChange={findByText} />
+              <div className="catalog__categories">
+              </div>
+            </div>
             <select
               id="sort"
               name="sort"
@@ -71,7 +85,7 @@ const CatalogPage = () => {
           <div className="catalog__inner">
             <div className="catalog__filter">
               {catalogFilterList.map(({ id, title }) => (
-                <FilterItem key={id} title={title} />
+                <FilterItem names={names} key={id} title={title} />
               ))}
             </div>
             <div className="catalog__list">
@@ -99,10 +113,21 @@ const CatalogPageContainer = styled.div`
       display: flex;
       justify-content: space-between;
     }
-    &__list{
+    &__list {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 30px;
+    }
+    &__categories{
+      margin-left: 100px;
+    } 
+    &__chosen {
+      display: flex;
+      align-items: center;
+      input {
+        outline: 0;
+        height: 50px;
+      }
     }
   }
 `;
