@@ -1,12 +1,18 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React, { useState } from "react";
+import styled from "styled-components";
+import { filterList } from "../data";
 
-const CheckboxItem = ({id, text, amount, isChecked}) => {
-  const [checked, setChecked] = useState(false);
+const CheckboxItem = ({ id, text, amount, handleCheckbox }) => {
+
   return (
     <CheckboxItemContainer>
       <div className="checkbox__wrapper">
-        <input className="checkbox" type="checkbox" name="" id="" />
+        <input
+          className="checkbox"
+          type="checkbox"
+          onClick={(e) => handleCheckbox(id, e)}
+          value={text}
+        />
         <p className="checkbox__text">{text}</p>
         <span>{amount}</span>
       </div>
